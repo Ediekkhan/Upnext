@@ -18,6 +18,7 @@ const Home = () => {
   const download = async (index) => {
 
     // Download image programmatically.
+    
 
 
     const res = await setDownload(index)
@@ -85,7 +86,7 @@ const Home = () => {
       <div className={'pictures'}>
         {pictures && pictures.map((picture, i) => <div key={i}>
         <div>
-          <img src={`${PINATA_GATEWAY}/${picture.URL}`} width={'300px'} title={picture.desc}/>
+          <img src={`${PINATA_GATEWAY}/${picture.URL}`} width={'300px'} height={'350px'} title={picture.desc}/>
           {picture.name}
           <div className={'stats'}>
             <span><ion-icon name="heart-outline"></ion-icon> {picture.likes.toNumber()}</span>

@@ -40,15 +40,15 @@ const Header = () => {
 
   const submitHandler = async e => {
   e.preventDefault()
-
-    if (
-      name === '' ||
-      UD === '' ||
-      desc === ''
-    ) {
-      return
-    }
-
+  
+    // if (
+    //   name === '' ||
+    //   UD === '' ||
+    //   desc === ''
+    // ) {
+    //   return
+    // }
+    alert("done")
     setLoading(true)
 
     let url = new Promise(async resolve => {

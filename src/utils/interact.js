@@ -53,7 +53,7 @@ export const createPicture = async (name, desc, UD, url) => {
 
 
   if (typeof window.ethereum !== 'undefined') {
-    // await requestAccount()
+    await requestAccount()
 
     try {
       const txHash = await contractSigner.createPicture(name, desc, UD, url, {value: '0'})
