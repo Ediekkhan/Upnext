@@ -113,7 +113,7 @@ debugger
         <div className="container">
 
           <Link to='/' className="header-logo">
-            The Beau
+            Upnext
           </Link>
 
           <div className={'links'}>

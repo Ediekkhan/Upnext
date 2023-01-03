@@ -86,16 +86,27 @@ const Home = () => {
       <div className={'pictures'}>
         {pictures && pictures.map((picture, i) => <div key={i}>
         <div>
-          <img src={`${PINATA_GATEWAY}/${picture.URL}`} width={'300px'} height={'350px'} title={picture.desc}/>
+          <img src={`${PINATA_GATEWAY}/${picture.URL}`} width={'300px'} height={'320px'} title={picture.desc}/>
           {picture.name}
+
           <div className={'stats'}>
-            <span><ion-icon name="heart-outline"></ion-icon> {picture.likes.toNumber()}</span>
-            <span><ion-icon name="download-outline"></ion-icon> {picture.downloads.toNumber()}</span>
+
+            <div className='outline'>
+              <span><ion-icon name="heart-outline"></ion-icon> {picture.likes.toNumber()}</span>
+              <button className='react'onClick={() => like(i)}>Like</button>
+            </div>
+
+            <div className='outline'>
+              <span><ion-icon name="download-outline"></ion-icon> {picture.downloads.toNumber()}</span>
+              <button className='react' onClick={() => download(i)}>Download</button>
+            </div>
+
           </div>
+
           <span>{picture.UD}</span>
-          <button onClick={() => setTip(true)}>Tip</button>
-          <button onClick={() => like(i)}>Like</button>
-          <button onClick={() => download(i)}>Download</button>
+          <button className='react' onClick={() => setTip(true)}>Tip</button>
+          {/* <button  className='react'onClick={() => like(i)}>Like</button>
+          <button className='react' onClick={() => download(i)}>Download</button> */}
           {tip && <div className={''}>
             <input onChange={e => setValue(e.target.value)} type="number"/>
             <button onClick={() => sendTipHandler(picture.UD)}>Send Tip</button>

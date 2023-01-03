@@ -163,7 +163,9 @@ code {
 
 .stats span {
   display: grid;
-  grid-template-columns: 34px 34px;
+  grid-template-columns: 24px 3px;
+  margin: 10px 0 0 10px;
+  justify-content: space-between;
 }
 
 .modal-btns {
@@ -185,6 +187,7 @@ code {
   margin: 20px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  
 }
 
 
@@ -192,6 +195,30 @@ code {
   position: relative;
   display: inline-block;
 
+}
+
+.react{
+  background-color: gray;
+  border-radius: 20px;
+  padding:  10px  15px ;
+  margin: 0 0 0 10px;
+  width: 100px;
+}
+
+/* .heart-outline{
+  margin-top: 60px;
+  height: 10px;
+} */
+
+.outline{
+  display: flex;
+  width: 20%;
+  margin-right: 75px;
+}
+.stats{
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
 }
 
 
@@ -607,6 +634,9 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 .header-logo{
   display: flex;
   margin-bottom: 0;
+  font-size: 30px;
+  font-style: var(--bittersweet);
+  color: white;
 }
 .header-logo h1 {
   margin: auto;
