@@ -18,6 +18,17 @@ const Home = () => {
   const download = async (index) => {
 
     // Download image programmatically.
+
+    // const blob = new Blob([Blob]);                   // Step 3
+    // const fileDownloadUrl = URL.createObjectURL(blob); // Step 4
+    // this.setState ({fileDownloadUrl: fileDownloadUrl}, // Step 5
+    //   () => {
+    //     this.dofileDownload.click();                   // Step 6
+    //     URL.revokeObjectURL(fileDownloadUrl);          // Step 7
+    //     this.setState({fileDownloadUrl: ""})
+    // })
+
+
     
 
 
@@ -86,7 +97,7 @@ const Home = () => {
       <div className={'pictures'}>
         {pictures && pictures.map((picture, i) => <div key={i}>
         <div>
-          <img src={`${PINATA_GATEWAY}/${picture.URL}`} width={'300px'} height={'320px'} title={picture.desc}/>
+          <img src={`${PINATA_GATEWAY}/${picture.URL}`} width={'300px'} height={'320px'} title={picture.desc} alt="please wait"/>
           {picture.name}
 
           <div className={'stats'}>
