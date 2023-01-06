@@ -11,7 +11,7 @@ const uauth = new UAuth({
   // redirectUri: 'https://myhelpa.netlify.app',
   // redirectUri: 'http://localhost:3000',
   redirectUri: 'https://upnexxt.netlify.app',
-  scope: 'openid wallet'
+  scope: 'openid wallet email profile:optional social:optional'
 })
 
 export const domainResolution = async domain => {
