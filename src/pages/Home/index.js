@@ -20,14 +20,14 @@ const Home = () => {
 
     // Download image programmatically.
 
-    // const blob = new Blob([output]);                   // Step 3
-    // const fileDownloadUrl = URL.createObjectURL(blob); // Step 4
-    // this.setState ({fileDownloadUrl: fileDownloadUrl}, // Step 5
-    //   () => {
-    //     this.dofileDownload.click();                   // Step 6
-    //     URL.revokeObjectURL(fileDownloadUrl);          // Step 7
-    //     this.setState({fileDownloadUrl: ""})
-    // })
+        // const blob = new Blob([output]);                   // Step 3
+        // const fileDownloadUrl = URL.createObjectURL(blob); // Step 4
+        // this.setState ({fileDownloadUrl: fileDownloadUrl}, // Step 5
+        //   () => {
+        //     this.dofileDownload.click();                   // Step 6
+        //     URL.revokeObjectURL(fileDownloadUrl);          // Step 7
+        //     this.setState({fileDownloadUrl: ""})
+        // })
 
     saveAs(`${PINATA_GATEWAY}/${pictures[index].URL}`, 'image.jpg') // Put your image url here.
 
