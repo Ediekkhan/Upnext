@@ -6,9 +6,11 @@ const resolution = new Resolution()
 
 
 const uauth = new UAuth({
+  // clientID: '517e5112-cd4e-42a1-9959-883451fcaafb',
   clientID: '7e848bbc-0aff-4a54-bd81-1b6abd338b69',
   // redirectUri: 'https://myhelpa.netlify.app',
-  redirectUri: 'http://localhost:3000',
+  // redirectUri: 'http://localhost:3000',
+  redirectUri: 'https://upnexxt.netlify.app',
   scope: 'openid wallet'
 })
 
