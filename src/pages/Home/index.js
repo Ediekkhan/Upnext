@@ -4,6 +4,7 @@ import banner from '../../assets/img/banner.jpg'
 import { setDownload, setLike, sendTip, PINATA_GATEWAY } from '../../utils'
 import { PictureContext } from '../../context'
 import {domainResolution} from "../../services";
+import { saveAs } from 'file-saver'
 
 
 const Home = () => {
@@ -19,7 +20,7 @@ const Home = () => {
 
     // Download image programmatically.
 
-    // const blob = new Blob([Blob]);                   // Step 3
+    // const blob = new Blob([output]);                   // Step 3
     // const fileDownloadUrl = URL.createObjectURL(blob); // Step 4
     // this.setState ({fileDownloadUrl: fileDownloadUrl}, // Step 5
     //   () => {
@@ -28,9 +29,7 @@ const Home = () => {
     //     this.setState({fileDownloadUrl: ""})
     // })
 
-
-    
-
+    saveAs(`${PINATA_GATEWAY}/${pictures[index].URL}`, 'image.jpg') // Put your image url here.
 
     const res = await setDownload(index)
     if (res) {
