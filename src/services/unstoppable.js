@@ -7,8 +7,8 @@ const resolution = new Resolution()
 
 const uauth = new UAuth({
   clientID: '7e848bbc-0aff-4a54-bd81-1b6abd338b69',
-  // redirectUri: 'https://upnexxt.netlify.app',
-  redirectUri: "http://localhost:3000", 
+  redirectUri: 'https://upnexxt.netlify.app',
+  // redirectUri: "http://localhost:3000", 
   scope: 'openid wallet email profile:optional social:optional'
 })
 
