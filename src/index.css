@@ -129,11 +129,13 @@ code {
 
 .form, .tip {
   position: absolute;
+  width: 60%;
   top: 50%;
   left: 50%;
   z-index: 999999;
   transform: translate(-50%, -50%);
   padding: 15px;
+  margin: 10px;
   background: #fefefe;
 }
 
@@ -183,13 +185,23 @@ code {
 }
 
 .pictures {
-  width: 80%;
-  margin: 20px auto;
+  margin-top: 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 25% 25% 25%;
+  grid-gap: 3rem;
+  justify-content: center;
   
 }
 
+.picture .img-container {
+  height: 230px;
+  overflow: hidden;
+}
+
+
+.picture {
+  margin: 0 12px;
+}
 
 #input-btn-container {
   position: relative;
@@ -198,31 +210,59 @@ code {
 }
 
 .react{
-  background-color: gray;
-  border-radius: 15px;
-  padding:  10px  15px ;
+  background-color: rgb(185, 180, 180);
+  border-radius: 8px;
+  padding:  6px  10px ;
   margin: 0 0 0 10px;
-  width: 100px;
+  /* width: 100px; */
 }
 
 .tips{
-  background-color: blue;
+  background-color: rgb(34, 34, 228);
   color: white;
-
+  cursor: pointer;
+  margin-right: 16px;
 }
 
 
 .send{
   padding:  10px  15px ;
-  margin: 8px;
+  /* margin: 8px; */
   border-radius: 15px;
-
+  margin-left: 40%;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-/* .heart-outline{
-  margin-top: 60px;
-  height: 10px;
-} */
+
+
+
+.sendTipHandler{
+  position: fixed;
+  z-index: 10;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  background-color: rgb(189, 184, 184);
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  height: 300px;  
+}
+
+
+
+.tip-input{
+  width: 50%;
+  position: absolute;
+  left: 25%;
+  top: 30%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
 
 .outline{
   display: flex;
@@ -231,8 +271,8 @@ code {
 }
 .stats{
   display: flex;
-  justify-content: space-between;
-  width: 30%;
+  /* justify-content: space-between;
+  width: 30%; */
 }
 
 
@@ -389,6 +429,8 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 /**
  * overlay
  */
+
+ 
 
 .overlay {
   position: fixed;

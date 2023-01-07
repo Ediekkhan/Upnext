@@ -10,7 +10,9 @@ import { saveAs } from 'file-saver'
 const Home = () => {
 
   const [tip, setTip] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [value, setValue] = useState('')
+  const [domain, setDomain] = useState('')
 
   const pictures = useGetPictures({refresh: false})
 
@@ -20,14 +22,6 @@ const Home = () => {
 
     // Download image programmatically.
 
-        // const blob = new Blob([output]);                   // Step 3
-        // const fileDownloadUrl = URL.createObjectURL(blob); // Step 4
-        // this.setState ({fileDownloadUrl: fileDownloadUrl}, // Step 5
-        //   () => {
-        //     this.dofileDownload.click();                   // Step 6
-        //     URL.revokeObjectURL(fileDownloadUrl);          // Step 7
-        //     this.setState({fileDownloadUrl: ""})
-        // })
 
     saveAs(`${PINATA_GATEWAY}/${pictures[index].URL}`, 'image.jpg') // Put your image url here.
 
@@ -35,7 +29,10 @@ const Home = () => {
     if (res) {
       setRefresh(true)
     }
-
+    const tipHandler = ud => {
+      setTip(true)
+      setDomain(ud)
+    }
   }
 
   const like = async (index) => {
@@ -47,8 +44,14 @@ const Home = () => {
 
   }
 
-  const sendTipHandler = async (domain) => {
+  const tipHandler = ud => {
+    setTip(true)
+    setDomain(ud)
+  }
 
+  const sendTipHandler = async () => {
+
+    setLoading(true)
     const address = new Promise(async resolve => {
       const r = await domainResolution(domain)
       resolve(r)
@@ -59,8 +62,11 @@ const Home = () => {
     if (addr) {
       const res = await sendTip(addr, value)
       console.log(res)
+      setTip(false)
     }
 
+    setLoading(false)
+    
   }
 
   return (
@@ -93,11 +99,19 @@ const Home = () => {
 
       </div>
 
+      {tip && <div className={'sendTipHandler'}>
+        <input  className='tip-input'  onChange={e => setValue(e.target.value)} type="number"/>
+        <button className='send tips'onClick={() => sendTipHandler()}>{loading ? 'Sending ...' : 'Send Tip'}</button>
+      </div>}
+
       <div className={'pictures'}>
         {pictures && pictures.map((picture, i) => <div key={i}>
-        <div>
-          <img src={`${PINATA_GATEWAY}/${picture.URL}`} width={'300px'} height={'320px'} title={picture.desc} alt="please wait"/>
-          {picture.name}
+        <div className='picture'>
+          <div className='img-container'>
+            <img src={`${PINATA_GATEWAY}/${picture.URL}`} height="230px" title={picture.desc} alt="please wait"/>
+          </div>  
+          
+          <h3 style={{margin: '16px 0 20px 12px'}}>{picture.name}</h3>
 
           <div className={'stats'}>
 
@@ -113,14 +127,15 @@ const Home = () => {
 
           </div>
 
-          <span>{picture.UD}</span>
-          <button className='react tips' onClick={() => setTip(true)}>Tip</button>
+      
+          <div style={{marginTop: '12px'}}>
+            <span className='react tips' onClick={() => tipHandler(picture.UD)}>Tip</span>
+            <span>{picture.UD}</span>
+          </div>
+          
           {/* <button  className='react'onClick={() => like(i)}>Like</button>
           <button className='react' onClick={() => download(i)}>Download</button> */}
-          {tip && <div className={''}>
-            <input onChange={e => setValue(e.target.value)} type="number"/>
-            <button className='send tips'onClick={() => sendTipHandler(picture.UD)}>Send Tip</button>
-          </div>}
+          
         </div>
 
         </div>)}

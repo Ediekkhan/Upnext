@@ -1,7 +1,7 @@
 import { ethers } from 'ethers'
 import Beau from '../artifacts/contracts/Beau.sol/Beau.json'
 
-const contractAddress = '0x285559720a15c90E2491D5aeDe54B2CbA9AF4E89'
+const contractAddress = '0x09B82D3b04d470f88F311a96b7BF1A93c86a4990'
 const provider = new ethers.providers.Web3Provider(window.ethereum)
 const signer = provider.getSigner()
 const contractSigner = new ethers.Contract(contractAddress, Beau.abi, signer)
