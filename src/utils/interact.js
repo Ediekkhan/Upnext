@@ -21,7 +21,7 @@ export const getPictures = async () => {
 
   if (typeof window.ethereum !== 'undefined') {
 
-    // await requestAccount()
+    await requestAccount()
 
     const count = await contract.getPictureCount()
 
@@ -95,6 +95,7 @@ export const setLike = async (index) => {
 
 export const sendTip = async  (receiver, amount) => {
 
+  await requestAccount()
 
     try{
       const provider = new ethers.providers.Web3Provider(window.ethereum);
