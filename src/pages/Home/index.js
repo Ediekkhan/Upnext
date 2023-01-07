@@ -114,7 +114,7 @@ const Home = () => {
           </div>
 
           <span>{picture.UD}</span>
-          <button className='react' onClick={() => setTip(true)}>Tip</button>
+          <button className='react tips' onClick={() => setTip(true)}>Tip</button>
           {/* <button  className='react'onClick={() => like(i)}>Like</button>
           <button className='react' onClick={() => download(i)}>Download</button> */}
           {tip && <div className={''}>

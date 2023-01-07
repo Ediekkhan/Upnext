@@ -205,6 +205,12 @@ code {
   width: 100px;
 }
 
+.tips{
+  background-color: blue;
+  color: white;
+
+}
+
 /* .heart-outline{
   margin-top: 60px;
   height: 10px;
