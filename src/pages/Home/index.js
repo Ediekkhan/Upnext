@@ -119,7 +119,7 @@ const Home = () => {
           <button className='react' onClick={() => download(i)}>Download</button> */}
           {tip && <div className={''}>
             <input onChange={e => setValue(e.target.value)} type="number"/>
-            <button onClick={() => sendTipHandler(picture.UD)}>Send Tip</button>
+            <button className='send tips'onClick={() => sendTipHandler(picture.UD)}>Send Tip</button>
           </div>}
         </div>
 
